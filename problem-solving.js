@@ -348,12 +348,46 @@ function towerBreakers(n, m) {
                 console.log("after", currentTurn)
             }
         }
-        
+
     return currentTurn == 1 ? 2 : 1
 
 }
+function miniMaxSum(arr) {
+    // Write your code here
+    arr.sort();
+    let minSum = 0, maxSum = 0;
 
-console.log(towerBreakers(1, 4))
+    minSum = arr.slice(0, arr.length - 1).reduce((acc, cv) => acc + cv, 0)
+    maxSum = arr.slice(1).reduce((acc, cv) => acc + cv, 0)
+
+    console.log(minSum, maxSum)
+
+}
+
+function birthdayCakeCandles(candles) {
+    // Write your code here
+    let maxLength = candles[0];
+    let maxLengthCandles = 0;
+
+    for (const candle of candles) {
+        if (candle > maxLength) {
+            maxLength = candle;
+            maxLengthCandles = 1;
+        }
+        
+        else if(candle == maxLength)
+            maxLengthCandles ++;
+
+        console.log(candle, maxLength, maxLengthCandles)
+
+    }
+    console.log(maxLengthCandles)
+
+}
+
+birthdayCakeCandles([3, 2, 1, 3])
+// miniMaxSum([1, 2, 3, 4, 5])
+// console.log(towerBreakers(1, 4))
 // console.log(flipMatrix([
 //     [112, 128, 54, 107],
 //     [12, 75, 110, 85],

@@ -83,7 +83,7 @@ function fetch(options) {
                 })
             }
         )
-            .end
+            .end()
     })
 }
 
